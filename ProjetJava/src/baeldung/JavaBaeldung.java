@@ -19,7 +19,14 @@ public class JavaBaeldung {
 		//System.out.println(getUniqueCharacterSubstring("CODINGISAWESOME"));
 		String str = "abbb";
 		
-		getAllPermutation(str);
+		//getAllPermutation(str);
+		
+		Integer[] input = { 2, 4, 3, 3 };
+		int sum = 6;
+		//getAllPair(input, sum);
+		
+		Integer arr[] = {3, 6, 4, 8, 9};
+		getSumArrayPuzzle(arr);
 	}
 	
 	public String getUniqueCharacterSubstring(String input) {
@@ -146,5 +153,55 @@ public class JavaBaeldung {
 			return true;
 		}
 		return false;
+	}
+	
+	private static Set<Integer[]> getAllPair(Integer[] values, int sum){
+		Set<Integer[]> pair = new HashSet<>();
+		
+		for (int i = 0; i < values.length; i++) {
+			for (int j = 1; j < values.length; j++) {
+				if(i != j) {
+					if(values[i] + values[j] == sum) {
+						pair.add(new Integer[] {values[i], values[j]});
+				}
+				}
+			}
+		}
+		
+		for (Integer[] integers : pair) {
+			Integer[] tab = integers;
+			for (Integer v : tab) {
+				System.out.println(v);
+			}
+			System.out.println(" , ");
+		}
+		return pair;
+	}
+	
+	
+	//Input : arr[] = {3, 6, 4, 8, 9}
+	//Output : sum[] = {27, 24, 26, 22, 21}
+
+	//Input : arr[] = {4, 5, 7, 3, 10, 1}
+	//Output : sum[] = {26, 25, 23, 27, 20, 29}
+	private static Integer[] getSumArrayPuzzle(Integer[] values) {
+		
+		Integer[] list = new Integer[values.length];
+		
+		for (int i = 0; i < values.length; i++) {
+			int p = values[i];
+			int sum=0;
+			for (int j = 0; j < values.length; j++) {
+				sum = sum + values[j];
+			}
+			
+			list[i] = sum-p;
+		}
+		
+		for (Integer l : list) {
+			System.out.println(l);
+		}
+		
+		return list;
 	}
 }
