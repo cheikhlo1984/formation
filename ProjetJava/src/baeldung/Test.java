@@ -10,7 +10,7 @@ import java.util.PriorityQueue;
 
 public class Test {
 
-	Main main = new Main();
+/*	Main main = new Main();
 	JavaBaeldung baeldung = new JavaBaeldung();
 
 	@org.junit.Test
@@ -136,5 +136,5 @@ public class Test {
 		}
 	
 		assertEquals(3, names.size());
-	}
+	}*/
 }
