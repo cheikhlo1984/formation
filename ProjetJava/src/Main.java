@@ -13,7 +13,7 @@ public class Main {
 
 	
 		 private static void doStuff(String str) {
-		        int var = 4;
+		        int var = 3;
 		        if (var == str.length()) {
 		            System.out.print(str.charAt(--var) + " ");
 		        }
